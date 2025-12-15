@@ -72,7 +72,7 @@ requests
 langchain-ollama
 
 # Démarrer le serveur MCP (FastAPI)
-python server_mcp.py
+python budget_mcp_server.py 
 
 Le serveur écoute sur http://localhost:3333
 
