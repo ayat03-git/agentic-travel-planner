@@ -44,6 +44,7 @@ travel_agent_lab/
 ### 1. Cloner le projet
 
 git clone https://github.com/ton-utilisateur/agentic-travel-planner.git
+
 cd agentic-travel-planner
 
 # Création
@@ -55,7 +56,7 @@ venv_ollama\Scripts\activate
 # Activation (Mac/Linux)
 source venv_ollama/bin/activate
 
-#Installer les dépendances
+# Installer les dépendances
 pip install -r requirements.txt
 
 Exemple de requirements.txt :
@@ -70,15 +71,15 @@ requests
 
 langchain-ollama
 
-#Démarrer le serveur MCP (FastAPI)
+# Démarrer le serveur MCP (FastAPI)
 python server_mcp.py
 
 Le serveur écoute sur http://localhost:3333
 
-#Lancer l'application Streamlit
+# Lancer l'application Streamlit
 streamlit run app.py
 
-#🎯 Guide d'utilisation
+# 🎯 Guide d'utilisation
 1-Saisir la destination (ex. Paris)
 
 2-Choisir le nombre de jours (1 à 30)
@@ -98,7 +99,7 @@ streamlit run app.py
  --Les ajustements automatiques si le budget est dépassé
 
 
-#🛠️ Configuration avancée
+# 🛠️ Configuration avancée
 1- Modèle Ollama
 
 Par défaut, l'application utilise llama3.2:3b. Pour changer de modèle :
@@ -120,7 +121,7 @@ Ajouter le wrapper dans agent.py
 Mettre à jour la liste des outils dans l'agent
 
 
-#⚠️ Notes importantes
+# ⚠️ Notes importantes
 Le serveur MCP doit être lancé avant l'application Streamlit
 
 Ne pas inclure de clés API ou données sensibles dans le dépôt
