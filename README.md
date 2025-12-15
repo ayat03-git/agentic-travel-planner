@@ -21,7 +21,7 @@ L'application inclut un **agent critique** pour valider l'itinéraire et peut r�
 travel_agent_lab/
 ├── agent.py                 # Logique de l'agent LLM + outils + critique
 ├── app.py                   # Interface utilisateur Streamlit
-├── server_mcp.py            # Serveur FastAPI pour l'estimation budgétaire
+├── budget_mcp_server.py          # Serveur FastAPI pour l'estimation budgétaire
 ├── requirements.txt         # Dépendances Python
 └── README.md                # Documentation
 </pre>
@@ -42,7 +42,7 @@ travel_agent_lab/
 ## 🚀 Installation et démarrage
 
 ### 1. Cloner le projet
-```bash
+
 git clone https://github.com/ton-utilisateur/agentic-travel-planner.git
 cd agentic-travel-planner
 
@@ -59,52 +59,60 @@ source venv_ollama/bin/activate
 pip install -r requirements.txt
 
 Exemple de requirements.txt :
+
 streamlit
+
 fastapi
+
 uvicorn
+
 requests
+
 langchain-ollama
 
 #Démarrer le serveur MCP (FastAPI)
 python server_mcp.py
+
 Le serveur écoute sur http://localhost:3333
 
 #Lancer l'application Streamlit
 streamlit run app.py
 
 #🎯 Guide d'utilisation
-Saisir la destination (ex. Paris)
+1-Saisir la destination (ex. Paris)
 
-Choisir le nombre de jours (1 à 30)
+2-Choisir le nombre de jours (1 à 30)
 
-Définir un budget maximal (optionnel)
+3-Définir un budget maximal (optionnel)
 
-Cliquer sur Generate Travel Plan 🧳
+4-Cliquer sur Generate Travel Plan 🧳
 
-Consulter :
+5-Consulter :
 
-L'itinéraire généré avec le budget estimé
+ --L'itinéraire généré avec le budget estimé
 
-Les appels aux outils affichés en temps réel
+ --Les appels aux outils affichés en temps réel
 
-La critique de l'itinéraire dans la section Critic Review 📝
+ --La critique de l'itinéraire dans la section Critic Review 📝
 
-Les ajustements automatiques si le budget est dépassé
+ --Les ajustements automatiques si le budget est dépassé
 
 
 #🛠️ Configuration avancée
-Modèle Ollama
+1- Modèle Ollama
+
 Par défaut, l'application utilise llama3.2:3b. Pour changer de modèle :
 
-Modifier agent.py :
+1-1 Modifier agent.py :
 
-python
 llm = ChatOllama(model="nouveau-modele", temperature=0)
-S'assurer que le modèle est téléchargé localement :
 
-bash
+2-1 S'assurer que le modèle est téléchargé localement :
+
 ollama pull nouveau-modele
-Ajouter un nouvel outil
+
+2-Ajouter un nouvel outil
+
 Étendre le serveur MCP (server_mcp.py) avec un nouvel endpoint
 
 Ajouter le wrapper dans agent.py
