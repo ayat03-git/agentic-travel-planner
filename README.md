@@ -15,7 +15,6 @@ L'application inclut un **agent critique** pour valider l'itinéraire et peut r�
 ✅ Interface utilisateur intuitive et responsive avec Streamlit  
 
 ---
-
 ## 🗂️ Structure du projet
 travel_agent_lab/
 ├── agent.py # Logique de l'agent LLM + outils + critique
@@ -23,6 +22,7 @@ travel_agent_lab/
 ├── server_mcp.py # Serveur FastAPI pour l'estimation budgétaire
 ├── requirements.txt # Dépendances Python
 └── README.md # Documentation
+
 
 
 ---
